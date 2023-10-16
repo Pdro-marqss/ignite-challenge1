@@ -40,6 +40,7 @@ export const InputTaksContainer = styled.form`
 
       color: ${props => props.theme["gray-100"]};
       font-size: 1rem;
+      font-weight: 700;
 
       cursor: pointer;
    }
