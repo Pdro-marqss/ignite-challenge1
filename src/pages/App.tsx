@@ -1,23 +1,24 @@
+import { useState } from 'react';
 import { Header } from "../components/Header";
 import { StatusBar } from "../components/StatusBar";
+import { EmptyList } from "../components/EmptyList";
+import { TaskList } from "../components/TaskList";
 
-import { AppContainerEmpty, Line } from './styles';
-
-import { ClipboardText } from "phosphor-react";
+export interface Task {
+  isChecked: boolean;
+  task: string;
+}
 
 export function App() {
+  const [taskList, setTaskList] = useState<Task[]>([]);
+
   return (
     <>
       <Header />
       <StatusBar />
 
+      {taskList.length > 0 ? <TaskList taskList={taskList} /> : <EmptyList />}
 
-      <AppContainerEmpty>
-        <Line></Line>
-        <ClipboardText size={53} />
-        <p>Você ainda não tem tarefas cadastradas</p>
-        <span>Crie tarefas e organize seus itens a fazer</span>
-      </AppContainerEmpty>
 
     </>
   );
