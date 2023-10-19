@@ -12,9 +12,9 @@ export function TaskList({ taskList }: TaskListProps) {
    return (
       <TaskListContainer>
          {taskList.map((task) => (
-            <TaskContainer>
+            <TaskContainer key={task.id}>
                <div>
-                  <input type="checkbox" />
+                  <input name='Checkbox' type="checkbox" />
                   <p>{task.task}</p>
                </div>
                <Trash size={24} />
