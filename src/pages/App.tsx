@@ -16,7 +16,7 @@ export function App() {
   function createNewTask(task: string) {
     const newTask: Task = {
       id: new Date().getTime(),
-      isChecked: false,
+      isChecked: true,
       task: task
     }
 
@@ -28,7 +28,7 @@ export function App() {
   return (
     <>
       <Header createNewTask={createNewTask} />
-      <StatusBar />
+      <StatusBar taskList={taskList} />
 
       {taskList.length > 0
         ? <TaskList taskList={taskList} />
