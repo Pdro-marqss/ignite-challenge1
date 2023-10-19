@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const TaskListContainer = styled.div`
    width: 80%;
    max-width: 730px;
+   max-height: 50dvh;
    
    display: flex;
    flex-direction: column;
@@ -12,8 +13,20 @@ export const TaskListContainer = styled.div`
    margin: 0 auto;
    margin-top: 30px;
 
+   overflow: auto;
 
    color: ${props => props.theme["gray-100"]};
+
+   &&::-webkit-scrollbar {
+      -webkit-appearance: none;
+      width: 12px;
+}
+
+   &&::-webkit-scrollbar-thumb {
+      border-radius: 1px;
+      background-color: rgba(0,0,0,.1);
+      -webkit-box-shadow: 0 0 1px rgba(255,255,255,.2);
+}
 `;
 
 export const TaskContainer = styled.div`

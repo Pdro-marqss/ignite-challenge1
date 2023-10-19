@@ -30,6 +30,7 @@ export function InputTask({ createNewTask }: InputTaskProps) {
             placeholder='Adicione uma nova tarefa'
             onChange={onChangeTask}
             value={task}
+            autoComplete="off"
          />
          <button>
             Criar
