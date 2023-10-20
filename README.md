@@ -1,27 +1,72 @@
-# React + TypeScript + Vite
+<h1 align="center">
+    <img title="#todo" src="./.github/logo-todo.svg" alt=""/>
+</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <a href="#about">About</a> •
+  <a href="#features">Features</a> •
+  <a href="#how-it-works">How to run the application</a> • 
+  <a href="#tech-stack">Techs used</a>
+</p>
 
-Currently, two official plugins are available:
+<div align="center"> 
+	<img title="#todo" src="./.github/first-print.png" alt="" />
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<br>
 
-## Expanding the ESLint configuration
+<div align="center"> 
+	<img title="#todo" src="./.github/second-print.png" alt="" />
+</div>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## About
 
-- Configure the top-level `parserOptions` property like this:
+This project is a todo list made to fulfill the first challenge of [Rocketseat's](https://www.rocketseat.com.br/ignite) 2023 ReactJS course.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+---
+
+## Features
+
+- [x] Create new tasks
+- [x] mark tasks as completed
+- [x] Delete tasks
+- [x] Shows task status (how many were created and how many were completed)
+- [x] Save tasks list in local storage
+
+---
+
+## How to run the application
+
+You will need to have [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/) installed to run the project:
+
+#### Running the app
+
+```bash
+
+# Clone this repository
+$ git clone https://github.com/Pdro-marqss/ignite-challenge1.git
+
+# Access the project folder in your terminal
+$ cd ignite-challenge1
+
+# Install the dependencies
+$ npm install
+
+# Run the application in development mode
+$ npm run dev
+
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+---
+
+## Techs used
+
+Tools used in the construction of this project:
+
+- **[React](https://reactjs.org/)**
+- **[Vite](https://vitejs.dev/)**
+- **[Typescript](https://www.typescriptlang.org/)**
+- **[Styled Components](https://styled-components.com/)**
+- **[PhosphorIcons](https://phosphoricons.com/)**
+
+---
