@@ -6,9 +6,10 @@ import { Task } from '../../pages/App';
 
 interface TaskListProps {
    taskList: Task[];
+   deleteTask: (id: number) => void
 }
 
-export function TaskList({ taskList }: TaskListProps) {
+export function TaskList({ taskList, deleteTask }: TaskListProps) {
    return (
       <TaskListContainer>
          {taskList.map((task) => (
@@ -17,7 +18,7 @@ export function TaskList({ taskList }: TaskListProps) {
                   <input name='Checkbox' type="checkbox" />
                   <p>{task.task}</p>
                </div>
-               <Trash size={24} />
+               <Trash size={24} onClick={() => deleteTask(task.id)} />
             </TaskContainer>
          ))}
 

@@ -23,6 +23,12 @@ export function App() {
     setTaskList(state => [...state, newTask]);
   }
 
+  function deleteTask(id: number) {
+    const newTaskList = taskList.filter((task) => task.id !== id);
+
+    setTaskList(newTaskList);
+  }
+
   console.log("Renderizou");
 
   return (
@@ -31,7 +37,7 @@ export function App() {
       <StatusBar taskList={taskList} />
 
       {taskList.length > 0
-        ? <TaskList taskList={taskList} />
+        ? <TaskList taskList={taskList} deleteTask={deleteTask} />
         : <EmptyList />}
     </>
   );
