@@ -13,9 +13,11 @@ export function InputTask({ createNewTask }: InputTaskProps) {
 
    function handleSubmit(event: React.FormEvent) {
       event.preventDefault();
-      createNewTask(task);
+      if (task) {
+         createNewTask(task);
 
-      setTask('');
+         setTask('');
+      }
    }
 
    function onChangeTask(event: React.ChangeEvent<HTMLInputElement>) {
