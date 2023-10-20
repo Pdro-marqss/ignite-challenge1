@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Header } from "../components/Header";
 import { StatusBar } from "../components/StatusBar";
 import { EmptyList } from "../components/EmptyList";
@@ -13,20 +13,39 @@ export interface Task {
 export function App() {
   const [taskList, setTaskList] = useState<Task[]>([]);
 
-  function createNewTask(task: string) {
-    const newTask: Task = {
-      id: new Date().getTime(),
-      isChecked: false,
-      task: task
-    }
+  function loadLocalStorageTaskList() {
+    const taskListInLocalStorage = localStorage.getItem('taskList');
 
-    setTaskList(state => [...state, newTask]);
+    if (taskListInLocalStorage) {
+      setTaskList(JSON.parse(taskListInLocalStorage));
+    }
+  }
+
+  useEffect(() => {
+    loadLocalStorageTaskList();
+  }, [])
+
+  function setTaskListAndSaveInStorage(taskList: Task[]) {
+    setTaskList(taskList);
+
+    localStorage.setItem('taskList', JSON.stringify(taskList));
+  }
+
+  function createNewTask(task: string) {
+    setTaskListAndSaveInStorage([
+      ...taskList,
+      {
+        id: new Date().getTime(),
+        isChecked: false,
+        task: task
+      }
+    ]);
   }
 
   function deleteTask(id: number) {
     const newTaskList = taskList.filter((task) => task.id !== id);
 
-    setTaskList(newTaskList);
+    setTaskListAndSaveInStorage(newTaskList);
   }
 
   function markTaskAsCompleted(id: number) {
@@ -40,7 +59,7 @@ export function App() {
       return task;
     })
 
-    setTaskList(newTasks);
+    setTaskListAndSaveInStorage(newTasks);
   }
 
   console.log("Renderizou");
