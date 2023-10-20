@@ -16,7 +16,7 @@ export function App() {
   function createNewTask(task: string) {
     const newTask: Task = {
       id: new Date().getTime(),
-      isChecked: true,
+      isChecked: false,
       task: task
     }
 
@@ -29,6 +29,20 @@ export function App() {
     setTaskList(newTaskList);
   }
 
+  function markTaskAsCompleted(id: number) {
+    const newTasks = taskList.map(task => {
+      if (task.id === id) {
+        return {
+          ...task,
+          isChecked: !task.isChecked
+        };
+      }
+      return task;
+    })
+
+    setTaskList(newTasks);
+  }
+
   console.log("Renderizou");
 
   return (
@@ -37,7 +51,7 @@ export function App() {
       <StatusBar taskList={taskList} />
 
       {taskList.length > 0
-        ? <TaskList taskList={taskList} deleteTask={deleteTask} />
+        ? <TaskList taskList={taskList} deleteTask={deleteTask} markTaskAsCompleted={markTaskAsCompleted} />
         : <EmptyList />}
     </>
   );

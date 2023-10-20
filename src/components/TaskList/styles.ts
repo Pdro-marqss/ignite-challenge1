@@ -42,10 +42,29 @@ export const TaskContainer = styled.div`
    border-radius: 8px;
 
    padding: 16px;
-
+   
    div {
-      display: flex;
       flex: 1;
+      display: flex;
       gap: 20px;
+   }
+
+   svg {
+      cursor: pointer;
+   }
+`;
+
+export const CheckedButton = styled.button`
+   min-width: 1.3rem;
+   height: 1.3rem;
+
+   background: none;
+   border: none;
+
+   svg {
+      width: 100%;
+      height: 100%;
+      color: ${props => props.theme.purple};
+      cursor: pointer;
    }
 `;
