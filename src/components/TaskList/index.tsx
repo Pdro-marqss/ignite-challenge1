@@ -17,11 +17,11 @@ export function TaskList({ taskList, deleteTask, markTaskAsCompleted }: TaskList
             <TaskContainer key={task.id}>
                <div>
                   <CheckedButton onClick={() => markTaskAsCompleted(task.id)}>
-                     {task.isChecked ? <CheckCircle weight='fill' /> : <Circle />}
+                     {task.isChecked ? <CheckCircle className='iconChecked' weight='fill' /> : <Circle className='iconNotChecked' />}
                   </CheckedButton>
-                  <p>{task.task}</p>
+                  <p className={task.isChecked ? 'textChecked' : 'text'}>{task.task}</p>
                </div>
-               <Trash size={24} onClick={() => deleteTask(task.id)} />
+               <Trash className='trashIcon' size={30} onClick={() => deleteTask(task.id)} />
             </TaskContainer>
          ))}
 

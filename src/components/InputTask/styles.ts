@@ -21,6 +21,8 @@ export const InputTaksContainer = styled.form`
 
       color: ${props => props.theme["gray-100"]};
 
+      outline-color: ${props => props.theme["purple-dark"]};
+
       &::placeholder {
          color: ${props => props.theme["gray-300"]};
       }
@@ -43,5 +45,10 @@ export const InputTaksContainer = styled.form`
       font-weight: 700;
 
       cursor: pointer;
+
+      &:hover {
+         background: ${props => props.theme["blue"]};
+
+      }
    }
 `;

@@ -47,10 +47,24 @@ export const TaskContainer = styled.div`
       flex: 1;
       display: flex;
       gap: 20px;
+
+      .textChecked {
+         color: ${props => props.theme["gray-300"]};
+         text-decoration: line-through;
+      }
    }
 
    svg {
       cursor: pointer;
+   }
+
+   .trashIcon {
+      padding: 5px;
+      &:hover {
+         background: ${props => props.theme["gray-400"]};
+         border-radius: 4px;
+         color: ${props => props.theme.danger};
+      }
    }
 `;
 
@@ -65,6 +79,19 @@ export const CheckedButton = styled.button`
       width: 100%;
       height: 100%;
       color: ${props => props.theme.purple};
-      cursor: pointer;
+   }
+
+   .iconNotChecked {
+      &:hover {
+         opacity: 70%;
+      }
+   }
+
+   .iconChecked {
+      opacity: 75%;
+
+      &:hover {
+         opacity: 100%;
+      }
    }
 `;
