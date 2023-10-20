@@ -5,8 +5,8 @@
 <p align="center">
   <a href="#about">About</a> •
   <a href="#features">Features</a> •
-  <a href="#how-it-works">How to run the application</a> • 
-  <a href="#tech-stack">Techs used</a>
+  <a href="#How to run the application">How to run the application</a> • 
+  <a href="#Techs used">Techs used</a>
 </p>
 
 <div align="center"> 
